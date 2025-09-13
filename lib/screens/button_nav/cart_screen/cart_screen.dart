@@ -47,7 +47,10 @@ class CartScreen extends StatelessWidget {
                 if (state is CartSuccess) {
                   return ListView.builder(
                       itemCount: state.model[0].products!.length,
-                      itemBuilder: (context, index) => CartItem());
+                      itemBuilder: (context, index) => CartItem(
+                            amount: state.model[0].products![index].quantity
+                                .toString(),
+                          ));
                 } else {
                   return Container();
                 }

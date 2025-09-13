@@ -1,8 +1,8 @@
 part of 'package:app_store/screens/button_nav/cart_screen/cart_screen.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key});
-
+  CartItem({super.key, required this.amount});
+  final String amount;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,7 +53,7 @@ class CartItem extends StatelessWidget {
                         CartButton(icon: Icons.remove),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: Text("2", style: TextStyle(fontSize: 16)),
+                          child: Text(amount, style: TextStyle(fontSize: 16)),
                         ),
                         CartButton(icon: Icons.add),
                       ],
