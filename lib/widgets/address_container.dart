@@ -1,5 +1,6 @@
 import 'package:app_store/core/helpers/App_assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../core/helpers/App_Styles.dart';
@@ -12,11 +13,11 @@ class AddressContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10),
-      padding: const EdgeInsets.all(10),
+      margin: EdgeInsets.all(10.w),
+      padding: EdgeInsets.all(10.w),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.borderColor),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: ListTile(
         leading: SvgPicture.asset(AppAssets.locationAssets),

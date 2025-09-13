@@ -6,21 +6,21 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(12),
-      padding: const EdgeInsets.all(12),
+      margin: EdgeInsets.all(12.w),
+      padding: EdgeInsets.all(12.w),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.borderColor),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: Row(
         children: [
           Image.asset(
             AppAssets.productAsset,
-            width: 60,
-            height: 60,
+            width: 60.w,
+            height: 60.h,
             fit: BoxFit.cover,
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: 12.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,18 +29,18 @@ class CartItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Regular Fit Slogan",
-                        style:
-                            AppStyles.kAppStyle32black.copyWith(fontSize: 14)),
+                        style: AppStyles.kAppStyle32black
+                            .copyWith(fontSize: 14.sp)),
                     SvgPicture.asset(
                       AppAssets.trashAssets,
-                      height: 20,
+                      height: 20.h,
                     ),
                   ],
                 ),
                 Text("Size L",
-                    style: AppStyles.kAppStyle16gray.copyWith(fontSize: 12)),
+                    style: AppStyles.kAppStyle16gray.copyWith(fontSize: 12.sp)),
                 SizedBox(
-                  height: 20,
+                  height: 20.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,8 +52,9 @@ class CartItem extends StatelessWidget {
                       children: [
                         CartButton(icon: Icons.remove),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: Text(amount, style: TextStyle(fontSize: 16)),
+                          padding: EdgeInsets.symmetric(horizontal: 8.w),
+                          child:
+                              Text(amount, style: TextStyle(fontSize: 16.sp)),
                         ),
                         CartButton(icon: Icons.add),
                       ],

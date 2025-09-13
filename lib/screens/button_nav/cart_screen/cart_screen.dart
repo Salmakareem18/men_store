@@ -6,6 +6,7 @@ import 'package:app_store/core/helpers/appbar.dart';
 import 'package:app_store/screens/button_nav/cart_screen/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 
@@ -31,8 +32,8 @@ class CartScreen extends StatelessWidget {
                   return Center(
                     child: Lottie.asset(
                       AppAssets.loadingAssets,
-                      width: 150,
-                      height: 150,
+                      width: 150.w,
+                      height: 150.h,
                       fit: BoxFit.contain,
                     ),
                   );
@@ -58,7 +59,7 @@ class CartScreen extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+            padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
             child: Column(
               spacing: 16,
               children: [
@@ -68,7 +69,7 @@ class CartScreen extends StatelessWidget {
                 Divider(),
                 CartRow(label: "Total", value: r"$5,950"),
                 SizedBox(
-                  height: 25,
+                  height: 25.h,
                 ),
                 AppElevatedbutton(
                   onPressed: () {},
@@ -82,7 +83,7 @@ class CartScreen extends StatelessWidget {
                       Icon(
                         Icons.arrow_forward,
                         color: Colors.white,
-                        size: 25,
+                        size: 25.sp,
                       )
                     ],
                   ),

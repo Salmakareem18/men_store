@@ -2,18 +2,14 @@ import 'package:app_store/core/helpers/App_Field.dart';
 import 'package:app_store/core/helpers/App_Styles.dart';
 import 'package:app_store/core/helpers/App_assets.dart';
 import 'package:app_store/core/helpers/App_colors.dart';
-import 'package:app_store/core/helpers/snackBar.dart';
 import 'package:app_store/screens/button_nav/home%20screen/category/cubit/category_cubit.dart';
-import 'package:app_store/screens/product%20%20details%20screen/producrdetails_screen.dart';
 import 'package:app_store/widgets/all_category.dart';
 import 'package:app_store/widgets/all_product_home.dart';
-import 'package:app_store/widgets/produc_gridbuilder.dart';
-import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:app_store/screens/button_nav/home%20screen/cubit/product_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,20 +42,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         body: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Row(
-                spacing: 8,
+                spacing: 8.w,
                 children: [
                   Expanded(
                     child: AppField(
                       hintText: "Search for clothes...",
                       prefix: SizedBox(
-                        height: 52,
-                        width: 52,
+                        height: 52.h,
+                        width: 52.w,
                         child: Icon(
                           Icons.search,
                           color: Color(0xffB3B3B3),
@@ -72,11 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              height: 16,
+              height: 16.h,
             ),
             AllCategory(),
             SizedBox(
-              height: 24,
+              height: 24.h,
             ),
             AllProductHomePage(),
           ],

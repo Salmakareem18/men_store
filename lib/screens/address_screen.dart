@@ -5,6 +5,7 @@ import 'package:app_store/core/helpers/appbar.dart';
 import 'package:app_store/widgets/address_container.dart';
 import 'package:app_store/widgets/listtitle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddressScreen extends StatelessWidget {
@@ -17,14 +18,14 @@ class AddressScreen extends StatelessWidget {
       backgroundColor: AppColors.scaffoldColor,
       appBar: CustomAppbar(title: "Address"),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Divider(
-              indent: 30,
-              endIndent: 30,
+              indent: 30.w,
+              endIndent: 30.w,
               color: AppColors.borderColor,
             ),
             Padding(
@@ -36,23 +37,23 @@ class AddressScreen extends StatelessWidget {
             ),
             AddressContainer(
                 title: Row(
-                  spacing: 4,
+                  spacing: 4.w,
                   children: [
                     Text(
                       "Home",
                       style: AppStyles.kAppStyleProducName,
                     ),
                     Container(
-                      height: 30,
-                      width: 70,
+                      height: 30.h,
+                      width: 70.w,
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(7)),
+                          borderRadius: BorderRadius.circular(7.r)),
                       child: Center(
                         child: Text(
                           "Default",
                           style: AppStyles.kAppStyle16white
-                              .copyWith(color: Colors.black, fontSize: 14),
+                              .copyWith(color: Colors.black, fontSize: 14.sp),
                         ),
                       ),
                     )

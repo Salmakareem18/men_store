@@ -5,6 +5,7 @@ import 'package:app_store/screens/address_screen.dart';
 import 'package:app_store/widgets/dialog_sheet.dart';
 import 'package:app_store/widgets/listtitle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/helpers/App_Styles.dart';
@@ -20,11 +21,11 @@ class ProfileScreen extends StatelessWidget {
         title: "Account",
       ),
       body: Column(
-        spacing: 5,
+        spacing: 5.h,
         children: [
           Divider(
-            indent: 30,
-            endIndent: 30,
+            indent: 30.w,
+            endIndent: 30.w,
             color: AppColors.borderColor,
           ),
           ListTitleProfile(
@@ -37,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           Divider(
-            thickness: 7,
+            thickness: 7.h,
             color: Color(0xffAAAAAA),
           ),
           ListTitleProfile(
@@ -50,8 +51,8 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           Divider(
-            indent: 35,
-            endIndent: 35,
+            indent: 35.w,
+            endIndent: 35.w,
             color: AppColors.borderColor,
           ),
           ListTitleProfile(
@@ -70,8 +71,8 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           Divider(
-            indent: 35,
-            endIndent: 35,
+            indent: 35.w,
+            endIndent: 35.w,
             color: AppColors.borderColor,
           ),
           ListTitleProfile(
@@ -84,8 +85,8 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           Divider(
-            indent: 35,
-            endIndent: 35,
+            indent: 35.w,
+            endIndent: 35.w,
             color: AppColors.borderColor,
           ),
           ListTitleProfile(
@@ -98,11 +99,11 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           Divider(
-            thickness: 7,
+            thickness: 7.h,
             color: AppColors.borderColor,
           ),
           SizedBox(
-            height: 100,
+            height: 100.h,
           ),
           GestureDetector(
             onTap: () {

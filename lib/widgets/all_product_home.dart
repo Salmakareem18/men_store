@@ -3,6 +3,7 @@ import 'package:app_store/screens/button_nav/cart_screen/cubit/cart_cubit.dart';
 import 'package:app_store/screens/product%20%20details%20screen/producrdetails_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 import '../core/helpers/App_assets.dart';
@@ -20,8 +21,8 @@ class AllProductHomePage extends StatelessWidget {
           return Center(
             child: Lottie.asset(
               AppAssets.loadingAssets,
-              width: 150,
-              height: 150,
+              width: 150.w,
+              height: 150.h,
               fit: BoxFit.contain,
             ),
           );

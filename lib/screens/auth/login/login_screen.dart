@@ -1,17 +1,14 @@
-import 'dart:ffi';
-
 import 'package:app_store/core/helpers/App_ElevatedButton.dart';
 import 'package:app_store/core/helpers/App_Field.dart';
 import 'package:app_store/core/helpers/App_Styles.dart';
 import 'package:app_store/core/helpers/App_colors.dart';
-import 'package:app_store/core/helpers/cash_helper.dart';
 import 'package:app_store/core/helpers/snackBar.dart';
 import 'package:app_store/screens/auth/login/cubit/login_cubit.dart';
-import 'package:app_store/screens/button_nav/home%20screen/Home_screen.dart';
 import 'package:app_store/screens/button_nav/homenav.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -52,8 +49,7 @@ class LoginScreen extends StatelessWidget {
               return Center(child: CircularProgressIndicator());
             }
             return Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24, vertical: 100),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 100.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -62,12 +58,13 @@ class LoginScreen extends StatelessWidget {
                   Text("It’s great to see you again.",
                       style: AppStyles.kAppStyle16gray),
                   SizedBox(
-                    height: 25,
+                    height: 25.h,
                   ),
                   Text("User Name",
-                      style: AppStyles.kAppStyle32black.copyWith(fontSize: 16)),
+                      style:
+                          AppStyles.kAppStyle32black.copyWith(fontSize: 16.sp)),
                   SizedBox(
-                    height: 5,
+                    height: 5.h,
                   ),
                   AppField(
                     hintText: "Enter your email address",
@@ -75,12 +72,13 @@ class LoginScreen extends StatelessWidget {
                     controller: cubit.namecontroller,
                   ),
                   SizedBox(
-                    height: 14,
+                    height: 14.h,
                   ),
                   Text("Password",
-                      style: AppStyles.kAppStyle32black.copyWith(fontSize: 16)),
+                      style:
+                          AppStyles.kAppStyle32black.copyWith(fontSize: 16.sp)),
                   SizedBox(
-                    height: 5,
+                    height: 5.h,
                   ),
                   AppField(
                     hintText: "Enter your password",
@@ -98,7 +96,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 55,
+                    height: 55.h,
                   ),
                   AppElevatedbutton(
                     text: 'Sign In',
@@ -113,8 +111,8 @@ class LoginScreen extends StatelessWidget {
                         style: AppStyles.kAppStyle16gray,
                       ),
                       Text(" Join",
-                          style:
-                              AppStyles.kAppStyle32black.copyWith(fontSize: 16))
+                          style: AppStyles.kAppStyle32black
+                              .copyWith(fontSize: 16.sp))
                     ],
                   )
                 ],

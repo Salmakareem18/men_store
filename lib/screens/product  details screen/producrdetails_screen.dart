@@ -8,6 +8,7 @@ import 'package:app_store/screens/button_nav/cart_screen/cubit/cart_cubit.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProducrdetailsScreen extends StatelessWidget {
@@ -20,11 +21,11 @@ class ProducrdetailsScreen extends StatelessWidget {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
             border: Border(top: BorderSide(color: AppColors.borderColor))),
-        height: 105,
+        height: 105.h,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: Row(
-            spacing: 16,
+            spacing: 16.w,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(
@@ -40,7 +41,7 @@ class ProducrdetailsScreen extends StatelessWidget {
                   Text(
                     r"$" + model.price.toString(),
                     style: AppStyles.kAppStyle32black
-                        .copyWith(fontWeight: FontWeight.bold, fontSize: 20),
+                        .copyWith(fontWeight: FontWeight.bold, fontSize: 20.sp),
                   ),
                 ],
               ),
@@ -66,13 +67,13 @@ class ProducrdetailsScreen extends StatelessWidget {
                       return CircularProgressIndicator();
                     }
                     return AppElevatedbutton(
-                      size: Size(240, 54),
+                      size: Size(240.w, 54.h),
                       onPressed: () {
                         cubit.postToCart();
                       },
                       widget: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        spacing: 10,
+                        spacing: 10.w,
                         children: [
                           SvgPicture.asset(AppAssets.bagAssets),
                           Text(

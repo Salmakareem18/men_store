@@ -1,6 +1,7 @@
 import 'package:app_store/core/helpers/App_Styles.dart';
 import 'package:app_store/core/helpers/App_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppElevatedbutton extends StatelessWidget {
   AppElevatedbutton(
@@ -17,9 +18,9 @@ class AppElevatedbutton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
           ),
-          fixedSize: size ?? Size(380, 50),
+          fixedSize: size ?? Size(380.w, 50.h),
           backgroundColor: AppColors.primaryColor,
         ),
         child: widget ??

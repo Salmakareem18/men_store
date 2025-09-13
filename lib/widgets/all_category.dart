@@ -1,6 +1,7 @@
 import 'package:app_store/screens/button_nav/home%20screen/category/cubit/category_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../core/helpers/App_Styles.dart';
 import '../core/helpers/App_colors.dart';
@@ -19,7 +20,7 @@ class _AllCategoryState extends State<AllCategory> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: 40.h,
       child: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
           if (state is CategorySuccess) {
@@ -40,12 +41,12 @@ class _AllCategoryState extends State<AllCategory> {
                         }
                       },
                       child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 6),
-                        padding: EdgeInsets.symmetric(horizontal: 15),
-                        height: 36,
+                        margin: EdgeInsets.symmetric(horizontal: 6.w),
+                        padding: EdgeInsets.symmetric(horizontal: 15.w),
+                        height: 36.h,
                         decoration: BoxDecoration(
                           border: Border.all(color: AppColors.borderColor),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                           color: selectedIndex == index
                               ? AppColors.primaryColor
                               : AppColors.textButtonColor,

@@ -1,6 +1,7 @@
 import 'package:app_store/core/helpers/App_Styles.dart';
 import 'package:app_store/core/helpers/App_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppField extends StatelessWidget {
   AppField(
@@ -25,11 +26,11 @@ class AppField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             borderSide: BorderSide(color: AppColors.borderColor),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             borderSide: BorderSide(color: AppColors.borderColor),
           ),
           suffixIcon: showIcon == false ? SizedBox.shrink() : eyeWidget,

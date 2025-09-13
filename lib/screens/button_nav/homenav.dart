@@ -6,6 +6,7 @@ import 'package:app_store/screens/button_nav/home%20screen/Home_screen.dart';
 import 'package:app_store/screens/button_nav/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Homenav extends StatefulWidget {
@@ -26,12 +27,12 @@ class _HomenavState extends State<Homenav> {
       child: Scaffold(
         backgroundColor: AppColors.scaffoldColor,
         bottomNavigationBar: Container(
-          height: 70,
+          height: 70.h,
           decoration: BoxDecoration(
             color: AppColors.scaffoldColor,
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(40),
-              topRight: Radius.circular(40),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40.r),
+              topRight: Radius.circular(40.r),
             ),
             border: Border(top: BorderSide(color: AppColors.borderColor)),
           ),
