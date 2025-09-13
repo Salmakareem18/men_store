@@ -14,7 +14,7 @@ class DioHelper {
   }
 
   static postRequest(
-      {required String endpoint, required Map<String, dynamic> data}) async {
+      {required String endpoint, Map<String, dynamic>? data}) async {
     try {
       Response response = await dio!.post(endpoint, data: data);
       return response;
