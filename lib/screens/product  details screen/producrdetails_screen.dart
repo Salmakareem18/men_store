@@ -2,12 +2,13 @@ import 'package:app_store/core/helpers/App_ElevatedButton.dart';
 import 'package:app_store/core/helpers/App_Styles.dart';
 import 'package:app_store/core/helpers/App_assets.dart';
 import 'package:app_store/core/helpers/App_colors.dart';
+import 'package:app_store/core/helpers/snackBar.dart';
 import 'package:app_store/models/product_model.dart';
 import 'package:app_store/screens/button_nav/cart_screen/cubit/cart_cubit.dart';
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lottie/lottie.dart';
 
 class ProducrdetailsScreen extends StatelessWidget {
   ProducrdetailsScreen({super.key, required this.model});
@@ -44,7 +45,21 @@ class ProducrdetailsScreen extends StatelessWidget {
                 ],
               ),
               Expanded(
-                child: BlocBuilder<CartCubit, CartState>(
+                child: BlocConsumer<CartCubit, CartState>(
+                  listener: (context, state) {
+                    if (state is AddToCartSuccess) {
+                      mySnackBar(
+                          msg: "Item Added Successfuly",
+                          type: ContentType.success,
+                          context: context);
+                    }
+                    if (state is AddToCartFailure) {
+                      mySnackBar(
+                          msg: "can not add item to cart",
+                          type: ContentType.failure,
+                          context: context);
+                    }
+                  },
                   builder: (context, state) {
                     final cubit = context.read<CartCubit>();
                     if (state is CartLoading) {
@@ -53,7 +68,7 @@ class ProducrdetailsScreen extends StatelessWidget {
                     return AppElevatedbutton(
                       size: Size(240, 54),
                       onPressed: () {
-                        cubit.getUserCart(1);
+                        cubit.postToCart();
                       },
                       widget: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
