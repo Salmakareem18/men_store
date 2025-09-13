@@ -15,3 +15,12 @@ class CartFailure extends CartState {
   final String? errmsg;
   CartFailure(this.errmsg);
 }
+
+class AddToCartLoading extends CartState {}
+
+class AddToCartSuccess extends CartState {}
+
+class AddToCartFailure extends CartState {
+  final String? errmsg;
+  AddToCartFailure(this.errmsg);
+}
