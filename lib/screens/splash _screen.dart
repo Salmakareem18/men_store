@@ -1,4 +1,5 @@
 import 'package:app_store/core/helpers/App_assets.dart';
+import 'package:app_store/core/helpers/App_colors.dart';
 import 'package:app_store/core/helpers/cash_helper.dart';
 import 'package:app_store/screens/auth/login/login_screen.dart';
 import 'package:app_store/screens/button_nav/homenav.dart';
@@ -15,14 +16,18 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 8), () async {
+    Future.delayed(Duration(seconds: 6), () async {
       CashHelper.getToken().then((value) {
         if (value.isNotEmpty) {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => Homenav()));
+              // ignore: use_build_context_synchronously
+              context,
+              MaterialPageRoute(builder: (context) => Homenav()));
         } else {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => LoginScreen()));
+              // ignore: use_build_context_synchronously
+              context,
+              MaterialPageRoute(builder: (context) => LoginScreen()));
         }
       });
     });
@@ -32,6 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.scaffoldColor,
       body: Center(child: Lottie.asset(AppAssets.cartloadinggAssets)),
     );
   }
