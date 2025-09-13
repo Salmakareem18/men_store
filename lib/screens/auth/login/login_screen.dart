@@ -6,6 +6,7 @@ import 'package:app_store/core/helpers/snackBar.dart';
 import 'package:app_store/screens/auth/login/cubit/login_cubit.dart';
 import 'package:app_store/screens/button_nav/homenav.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +14,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  @override
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -53,35 +53,36 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text("Login to your account",
-                      style: AppStyles.kAppStyle32black),
-                  Text("It’s great to see you again.",
-                      style: AppStyles.kAppStyle16gray),
+                  Text("LoginToYourAccount", style: AppStyles.kAppStyle32black)
+                      .tr(),
+                  Text("Welcom", style: AppStyles.kAppStyle16gray).tr(),
                   SizedBox(
                     height: 25.h,
                   ),
-                  Text("User Name",
-                      style:
-                          AppStyles.kAppStyle32black.copyWith(fontSize: 16.sp)),
+                  Text("UserName",
+                          style: AppStyles.kAppStyle32black
+                              .copyWith(fontSize: 16.sp))
+                      .tr(),
                   SizedBox(
                     height: 5.h,
                   ),
                   AppField(
-                    hintText: "Enter your email address",
+                    hintText: "YourName".tr(),
                     showIcon: false,
                     controller: cubit.namecontroller,
                   ),
                   SizedBox(
                     height: 14.h,
                   ),
-                  Text("Password",
-                      style:
-                          AppStyles.kAppStyle32black.copyWith(fontSize: 16.sp)),
+                  Text("Password".tr(),
+                          style: AppStyles.kAppStyle32black
+                              .copyWith(fontSize: 16.sp))
+                      .tr(),
                   SizedBox(
                     height: 5.h,
                   ),
                   AppField(
-                    hintText: "Enter your password",
+                    hintText: "yourpassword".tr(),
                     controller: cubit.passwordcontroller,
                     obscureText: cubit.obscureText,
                     showIcon: true,
@@ -99,22 +100,29 @@ class LoginScreen extends StatelessWidget {
                     height: 55.h,
                   ),
                   AppElevatedbutton(
-                    text: 'Sign In',
+                    text: "SignIn".tr(),
                     onPressed: () => cubit.login(),
                   ),
+                  SwitchListTile(
+                      title: Text("Change Language"),
+                      value: context.locale.languageCode == 'en',
+                      onChanged: (value) {
+                        context
+                            .setLocale((value ? Locale('en') : Locale('ar')));
+                      }),
                   Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Don’t have an account?",
+                        "Don’t have an account?".tr(),
                         style: AppStyles.kAppStyle16gray,
                       ),
-                      Text(" Join",
+                      Text(" Creat Account".tr(),
                           style: AppStyles.kAppStyle32black
                               .copyWith(fontSize: 16.sp))
                     ],
-                  )
+                  ),
                 ],
               ),
             );
