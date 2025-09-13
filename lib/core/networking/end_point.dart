@@ -4,6 +4,7 @@ class AppEndPoints {
   static const signup = "users";
 
   static const allProducts = "products";
+  static const addToCart = "carts";
   static const category = "products/categories";
   static const categoryProduct = "products/category/";
   static const cartProduct = "carts/user/";
