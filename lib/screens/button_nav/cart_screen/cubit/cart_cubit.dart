@@ -26,4 +26,21 @@ class CartCubit extends Cubit<CartState> {
       emit(CartFailure(e.toString()));
     }
   }
+
+  postToCart() async {
+    Response response =
+        await DioHelper.postRequest(endpoint: AppEndPoints.addToCart);
+    try {
+      emit(AddToCartLoading());
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        emit(AddToCartSuccess());
+      } else {
+        emit(AddToCartFailure("Can not add to cart"));
+      }
+    } on DioException catch (e) {
+      emit(AddToCartFailure(e.response?.data ?? e.toString()));
+    } catch (e) {
+      emit(AddToCartFailure(e.toString()));
+    }
+  }
 }
